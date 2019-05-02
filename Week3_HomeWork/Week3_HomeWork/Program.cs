@@ -210,7 +210,7 @@ namespace Week3_HomeWork
             Console.WriteLine("Exercitiul 17: Algorithm to check if a number is a Palindrome?");
             int num;
             int temp;
-            int remainder; 
+            int remainder;
             int reverse = 0;
             Console.WriteLine("Enter a number to check for Palindrome");
             num = Convert.ToInt32(Console.ReadLine());
@@ -234,14 +234,14 @@ namespace Week3_HomeWork
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Console.WriteLine("\n\n------------------------------------------------------------------------------------------------------------");
             Console.WriteLine("Exercitiul 19: How to rotate an array by a given pivot?");
-            int[] array4 = new int [] { 1,2,3};
+            int[] array4 = new int[] { 1, 2, 3 };
             var temporaryarr = array4[0];
 
-            for (int i6 = 0; i6 < array4.Length;i6++)
+            for (int i6 = 0; i6 < array4.Length; i6++)
             {
                 Console.Write(array4[i6] + " ");
-            }            
-            
+            }
+
             for (var i6 = 0; i6 < array4.Length - 1; i6++)
             {
                 array4[i6] = array4[i6 + 1];
@@ -253,12 +253,12 @@ namespace Week3_HomeWork
             {
                 Console.Write(array4[i6] + " ");
             }
-          
+
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Console.WriteLine("\n\n------------------------------------------------------------------------------------------------------------");
             Console.WriteLine("Exercitiul 21: Sorting an Array using Bubble Sort");
 
-            int[] array5 = new int [] { 23,34,27,66,33,43,56,78 };
+            int[] array5 = new int[] { 23, 34, 27, 66, 33, 43, 56, 78 };
             for (int i7 = 0; i7 < array5.Length; i7++)
             {
                 Console.Write(array5[i7] + " ");
@@ -283,19 +283,44 @@ namespace Week3_HomeWork
                 Console.Write(p + " ");
 
 
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n\n------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("Exercitiul 10: Write a Program which checks if two Strings are Anagram or not?");
+            var string1 = new List<string>();
+            var string2 = new List<string>();
+           
+            Console.WriteLine("1. Write first word to be checked:");
+            string1.Add(Console.ReadLine());
+
+            Console.WriteLine("2. Write the second word to be checked:");
+            string2.Add(Console.ReadLine());
+
+            for (int i8 = 0; i8 < string1.Count; i8++)
+            {
+                for (int j8 = string2.Count - 1; j8 >= 0; j8--)
+                {
+                    if (string1[i8] == string2[j8])
+                    {
+                        Console.WriteLine("{0} Is an anagram in comparison with {1}", string1[i8], string2[j8]);
+                    }
+                    else
+                        Console.WriteLine("{0} Is not an anagram in comparison with {1}", string1[i8], string2[j8]);
+                }
+            }
+
             Console.ReadKey();
         }
 
         //Functie booleana daca exista duplicate intr-un array
-        public static bool ContainDuplicates (int [] arr)
+        public static bool ContainDuplicates(int[] arr)
         {
-            for (int i = 0; i<arr.Length;i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-               
-                for (int j = i + 1;j<arr.Length;j++)
+
+                for (int j = i + 1; j < arr.Length; j++)
                 {
-                    if (arr[i] == arr[j])                   
-                    return true;
+                    if (arr[i] == arr[j])
+                        return true;
                 }
             }
             return false;
@@ -316,7 +341,7 @@ namespace Week3_HomeWork
 
         //Functie int pentru nth Fibonacci calcul (recursiv)
 
-        public static int Fibonacci (int numar)
+        public static int Fibonacci(int numar)
         {
             if (numar == 0) return 0;
             else if (numar == 1) return 1;
