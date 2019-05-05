@@ -18,20 +18,23 @@ namespace Exercise1_ATM
             //You can opt any of the above transaction according to your need of transaction.
 
             int balance = 10000;           
-            int pin;
             int option1 = 1;
             int option2 = 2;
             int option3 = 3;
+            int current, cltInput, pin, insert;
+            bool add = true;
+
             Console.WriteLine("Welcome! Please enter your pin:");
             pin = Convert.ToInt32(Console.ReadLine());
-            bool add = true;
+            
             while (add)
             {
                 Console.WriteLine("Please choose which operation you want to perform (write the indicative number only):\n1. Balance checking?\n2. Cash withdrawal?\n3. Cash deposition?");
-                int insert = Convert.ToInt32(Console.ReadLine());
+                insert = Convert.ToInt32(Console.ReadLine());
 
                 //Balance checking
                 if (insert == option1)
+
                 {
                     Console.WriteLine("Your current balance is {0} $.", balance);
                 }
@@ -39,17 +42,16 @@ namespace Exercise1_ATM
                 // Cash withdrawal
                 else if (insert == option2)
                 {
-                    Console.WriteLine("Please insert the amount of money you want to withdraw");                    
+                    Console.WriteLine("Please insert the amount of money you want to withdraw:");                    
                     {
-                        int withdraw = Convert.ToInt32(Console.ReadLine());
-                        if (balance >= withdraw)
-                        {
-                           
-                                Console.WriteLine("Please collect the {0} $ amount.", withdraw);
-                                int current = balance - withdraw;
+                        cltInput = Convert.ToInt32(Console.ReadLine());
+                        if (balance >= cltInput)
+                        {                           
+                                Console.WriteLine("Please collect the {0} $ amount.", cltInput);
+                                current = balance - cltInput;
                                 Console.WriteLine("The current balance is now {0} $.", current);                            
                         }
-                        else if (balance < withdraw)
+                        else if (balance < cltInput)
                             Console.WriteLine("Your account does not have sufficient balance (current amount is {0} $).", balance);
                     }
                    
@@ -58,9 +60,9 @@ namespace Exercise1_ATM
                 // Cash deposition
                 else if (insert == option3)
                 {
-                    Console.WriteLine("Enter the amount you want to deposite");
-                    int deposite = Convert.ToInt32(Console.ReadLine());
-                    int current = balance + deposite;
+                    Console.WriteLine("Enter the amount you want to deposite:");
+                    cltInput = Convert.ToInt32(Console.ReadLine());
+                    current = balance + cltInput;
                     Console.WriteLine("The current balance in the account is of {0} $.", current);
                 }                
                 else
@@ -74,6 +76,7 @@ namespace Exercise1_ATM
                     else break;                  
             }
                 Console.ReadKey();
+
         }
         
     }
